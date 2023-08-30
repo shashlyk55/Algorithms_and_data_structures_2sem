@@ -1,3 +1,15 @@
+Task 2
+According to the results of the Olympiad, participants are awarded diplomas. Those who score the same points receive diplomas of the same degree. The winner of the Olympiad is a participant who has received a diploma no worse than the III degree.
+Based on the results of the Olympiad, determine the number of winners. 
+Input: natural number of winners (N < 10000) and then N natural numbers вЂ“ the results of the participants (generate from 1 to 100)
+Output: one number is the number of winners.
+Example:
+Input     N=10 			1 3 4 3 5 6 7 7 6 1
+Output 			5
+Comment		The winners are the participants who scored 7, 6 or 5 points
+
+  
+
 #include<iostream>
 #include<windows.h>
 using namespace std;
@@ -7,10 +19,10 @@ void main() {
 	srand(time(NULL));
 
 	int N;
-	cout << "Количество участников: ";
+	cout << "Number of participants: ";
 	cin >> N;
 	while (N < 1 || N > 10000) {
-		cout << "Oшибка\nКоличество участников: ";
+		cout << "Error\nNumber of participants: ";
 		cin >> N;
 	}
 	int* a = new int[N];
@@ -41,7 +53,7 @@ void main() {
 		max = -1;
 	}
 
-	cout << "\nПризеры: " << sum;
+	cout << "\nprize - winners: " << sum;
 
 	delete[] a;
 }
