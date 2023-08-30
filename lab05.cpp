@@ -1,3 +1,7 @@
+1. In the developed application (on the walls) it is necessary to enter a character string that can contain numbers, letters, signs of mathematical operations (+, -, *, /) and three types of brackets: (), [] and {}. 
+Determine whether the brackets are correctly placed (the characters between the brackets are not taken into account). For example, in the lines ()[{}] and [{}([])] the brackets are placed correctly, and in the lines ([)] and ]]]((( - incorrect. 
+As an answer, print the text "brackets are placed correctly" or "brackets are placed incorrectly".
+
 #include <iostream>
 #include <stack>
 #include <string>
@@ -29,13 +33,13 @@ int main() {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
     string str;
-    cout << "Ââåäèòå ñòðîêó: ";
+    cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã±Ã²Ã°Ã®ÃªÃ³: ";
     getline(cin, str);
     if (checkBrackets(str)) {
-        cout << "Ñêîáêè ðàññòàâëåíû âåðíî\n";
+        cout << "Ã‘ÃªÃ®Ã¡ÃªÃ¨ Ã°Ã Ã±Ã±Ã²Ã Ã¢Ã«Ã¥Ã­Ã» Ã¢Ã¥Ã°Ã­Ã®\n";
     }
     else {
-        cout << "Ñêîáêè ðàññòàâëåíû íåâåðíî\n";
+        cout << "Ã‘ÃªÃ®Ã¡ÃªÃ¨ Ã°Ã Ã±Ã±Ã²Ã Ã¢Ã«Ã¥Ã­Ã» Ã­Ã¥Ã¢Ã¥Ã°Ã­Ã®\n";
     }
     return 0;
 }
