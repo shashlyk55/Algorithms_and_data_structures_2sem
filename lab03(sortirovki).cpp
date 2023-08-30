@@ -1,3 +1,13 @@
+Develop an application that implements sorting arrays of numeric data.  
+1. The user enters the number N (can be quite large).
+2. The application generates N numeric values of array A.
+3. Display the original array A on the screen.
+4. Copy array A to arrays B, C, D, E.
+5. After measuring the execution time, sort array B by bubble sorting. Display the sorted array and the time spent on the screen.
+6. After measuring the execution time, sort the array With insertion sorting (or the Shell method). Display the sorted array and the time spent on the screen.
+7. After measuring the execution time, sort the array D by sorting the selection. Display the sorted array and the time spent on the screen.
+8. After measuring the execution time, sort the array E by quick sorting. Display the sorted array and the time spent on the screen.
+
 #include<iostream>
 #include<ctime>
 using namespace std;
@@ -28,7 +38,7 @@ void main() {
 		E[i] = A[i];
 	}
 
-	//пузырьковая сортировка массива В пузыриками
+	//Bubble sort array B
 	cout << "\nB: \n";
 	for (int i = 0; i < N; i++) {
 		cout << B[i] << " ";
@@ -50,10 +60,10 @@ void main() {
 	for (int i = 0; i < N; i++) {
 		cout << B[i] << " ";
 	}
-	cout << "\nВремя B: " << dif << " мс\n";
+	cout << "\nTime B: " << dif << " ms\n";
 	
 
-	//сортировка массива C вставкой
+	//Insertion sort
 	cout << "\nC: \n";
 	for (int i = 0; i < N; i++) {
 		cout << C[i] << " ";
@@ -73,10 +83,10 @@ void main() {
 	for (int i = 0; i < N; i++) {
 		cout << C[i] << " ";
 	}
-	cout << "\nВремя С: " << dif << " мс\n";
+	cout << "\nTime C: " << dif << " ms\n";
 
 
-	//сортировка массива D выборкой
+	//Sorting by selection
 	cout << "\nD: \n";
 	for (int i = 0; i < N; i++) {
 		cout << D[i] << " ";
@@ -101,10 +111,10 @@ void main() {
 	for (int i = 0; i < N; i++) {
 		cout << D[i] << " ";
 	}
-	cout << "\nВремя D: " << dif << " мс\n";
+	cout << "\nTime D: " << dif << " ms\n";
 
 
-	//сортировка массива E быстрой сортировкой
+	//Quick sort
 	
 	cout << "\nE: \n";
 	for (int i = 0; i < N; i++) {
@@ -118,19 +128,19 @@ void main() {
 	for (int i = 0; i < N; i++) {
 		cout << E[i] << " ";
 	}
-	cout << "\nВремя E: " << dif << " мс\n";
+	cout << "\nTime E: " << dif << " ms\n";
 
 }
 
-void quicksort(int* mas, int first, int last) {     //функция сортировки
+void quicksort(int* mas, int first, int last) {     //Sorting function
 	int mid, count;
 	int f = first, l = last;
-	mid = mas[(f + l) / 2]; 				//вычисление опорного элемента
+	mid = mas[(f + l) / 2]; 				//calculation of the reference element
 	do
 	{
 		while (mas[f] < mid) f++;
 		while (mas[l] > mid) l--;
-		if (f <= l) 				//перестановка элементов
+		if (f <= l) 				//rearranging elements
 		{
 			count = mas[f];
 			mas[f] = mas[l];
