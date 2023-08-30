@@ -1,3 +1,5 @@
+Develop an application implementing the game "Guessing Game!" based on binary search.
+
 #include <iostream>
 #include <Windows.h>
 #include <cstdlib>
@@ -10,38 +12,32 @@ void main() {
 	srand(unsigned(time(NULL)) * 100 * 100 * 100 * 100);
 
 	
-		// Объявление данных
+		// data declaration
 		char n, otvet;
 		int scope, number;
-			cout << "Введите промежуток значений в котором вы хоитие загадать число\n";
+			cout << "Enter the range of values in which you want to guess the number\n";
 			cin >> scope;
-			/**cout << "Введите число, которое хотите загадать ";
-			cin >> number;
-			while (number > scope) {
-				cout << "Ошибка!Число не находится в заданном промежутке\n";
-				cin >> number;
-			}*/
 			
 			int a = 1, b=scope, c=1, f;
 			int random = scope / 2, count = 0, chast = scope / 2;
 			while (a != 2) {
 				
-				cout << " Я думаю это число: " << random << "\n\n";
-				cout << "1 - Меньше\n";
-				cout << "2 - Больше\n";
-				cout << "3 - Угадал\n";
+				cout << " Гџ Г¤ГіГ¬Г Гѕ ГЅГІГ® Г·ГЁГ±Г«Г®: " << random << "\n\n";
+				cout << "1 - less\n";
+				cout << "2 - more\n";
+				cout << "3 - you gessed it\n";
 				cin >> otvet;
 				while (otvet > '3' || otvet < '1') {
 					
-					cout << "некорректный ответ\n\n\n";
-					cout << "думаю это число: " << random << "\n";
-					cout << "1 - Меньше\n";
-					cout << "2 - Больше\n";
-					cout << "3 - Угадал\n";
+					cout << "incorrect response\n\n\n";
+					cout << "I think it's a number: " << random << "\n";
+					cout << "1 - less\n";
+					cout << "2 - more\n";
+					cout << "3 - you gessed it\n";
 					cin >> otvet;
 					
 				}
-				//Вычисление числa путём бинароного отбора
+				//Calculating a number by binary selection
 				count++;
 				if (otvet == '1') {
 					b = random;
@@ -84,14 +80,14 @@ void main() {
 					break;
 				}
 			}
-			//Максимальное количество шагов бинарного поиска
+			//ГЊГ ГЄГ±ГЁГ¬Г Г«ГјГ­Г®ГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГёГ ГЈГ®Гў ГЎГЁГ­Г Г°Г­Г®ГЈГ® ГЇГ®ГЁГ±ГЄГ 
 			int max_shag = 0, gread = scope;
 			while (gread != 0) {
 				gread = gread / 2;
 				max_shag++;
 			}
-			//Вывод количество попыток компьютера
-			cout << "Задуманное число: " << random << "\n";
-			cout << "Программе понадобилось " << count << " попыток \n";
-			cout << "Максимальное количество шагов бинарного поиска =  " << max_shag << "\n";		
+			//Output the number of computer attempts
+			cout << "The intended number: " << random << "\n";
+			cout << "the program needed " << count << " attempts \n";
+			cout << "Maximum number of binary search steps =  " << max_shag << "\n";		
 }
