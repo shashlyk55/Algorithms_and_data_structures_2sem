@@ -1,3 +1,5 @@
+To develop an application that implements the display of the N-number of the Fibonacci sequence. Implement 2 ways of counting: recursive way; linear way.
+
 #include<iostream>
 #include<ctime>
 using namespace std;
@@ -8,13 +10,13 @@ void main() {
 	setlocale(LC_ALL, "ru");
 	unsigned int n;
 	
-	cout << "Íîìåð ÷èñëà ïîñëåäîâàòåëüíîñòè: ";
+	cout << "ÃÃ®Ã¬Ã¥Ã° Ã·Ã¨Ã±Ã«Ã  Ã¯Ã®Ã±Ã«Ã¥Ã¤Ã®Ã¢Ã Ã²Ã¥Ã«Ã¼Ã­Ã®Ã±Ã²Ã¨: ";
 	cin >> n;
 	unsigned int start = clock();
-	cout << "×èñëî " << calc(n);
+	cout << "Ã—Ã¨Ã±Ã«Ã® " << calc(n);
 	unsigned int end = clock();
 	float dif = end - start;
-	cout << endl << (int)dif / 60000 << " ìèí " << (int)dif / 1000 << " ñ";
+	cout << endl << (int)dif / 60000 << " Ã¬Ã¨Ã­ " << (int)dif / 1000 << " Ã±";
 }
 
 int calc(int n,int a,int b) {
